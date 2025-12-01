@@ -1,0 +1,5 @@
+path: Helmet_Data
+train: images/train
+val: images/val
+nc: 3  # number of classes
+names: ['Helmet', 'no_person', 'Person_no_helmet']
