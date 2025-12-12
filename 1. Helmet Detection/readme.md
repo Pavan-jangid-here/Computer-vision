@@ -11,6 +11,7 @@ Dataset Used: [Kaggle Dataset](https://www.kaggle.com/datasets/rajeevsekar21/on-
 | HOG + SVM       | 85–92%   | < 1 min       |    ~1 MB   | Any PC        |
 | MobileNetV2     | 92–97%   | 5–10 min      |    ~3 MB   | Standard PC   |
 | EfficientNetV2S | 95–98%   | 15–30 min     |   ~15 MB   | Standard PC   |
+| YOLOv8n (NEW)   | 95–99%   | 20–45 min     |   ~6 MB**  | Google Colab  |
 
 ## 📁 Dataset Structure
 ```
@@ -24,6 +25,15 @@ Helmet_Dataset/
 └── Person_no_helmet/
 ├── img1.jpg
 └── img2.jpg
+
+yolo_labels/ # NEW: YOLO format annotations
+├── Helmet/
+│ ├── img1.txt
+│ └── img2.txt
+├── no_person/
+│ └── ...
+└── Person_no_helmet/
+└── ...
 
 Test_Files/
 ├── Person_with_helmet.jpg
@@ -47,11 +57,12 @@ pip install tensorflow-addons
 ## 📊 Model Comparison
 
 
-| Stage   | Method          | Features              | Best For                              |
-|---------|-----------------|-----------------------|---------------------------------------|
-| Stage 1 | HOG + SVM       | Handcrafted features  | Ultra-low resource, quick prototyping |
-| Stage 2 | MobileNetV2     | Transfer learning     | Balanced accuracy/speed               |
-| Stage 3 | EfficientNetV2S | SOTA CNN + fine-tuning| Production-grade accuracy             |
+| Stage   | Method          | Features                   | Best For                                     |
+|---------|-----------------|----------------------------|----------------------------------------------|
+| Stage 1 | HOG + SVM       | Handcrafted features       | Ultra-low resource, quick prototyping        |
+| Stage 2 | MobileNetV2     | Transfer learning          | Balanced accuracy/speed                      |
+| Stage 3 | EfficientNetV2S | SOTA CNN + fine-tuning     | Production-grade accuracy                    |
+| Stage 4 | YOLOv8n         | Real-time object detection | Production deployment, multiple objects      |
 
 
 ## 🎯 Quick Start
@@ -79,18 +90,28 @@ jupyter notebook train_efficientnetv2s.ipynb
 Train and save: helmet_efficientnetv2s.h5
 Test on: Test_Files/Person_with_helmet_3.jpg
 
+### 4. YOLOv8n Object Detection – Production Ready
+```
+jupyter notebook Image_Classification_YoLo.ipynb
+Convert dataset → Train → Deploy
+Output: best.pt (~6MB)
+
+Live Test using WebCam
+
+```
 
 ## 📈 Expected Performance
 
 ```
 Dataset: Helmet Detection (3 classes)
-├── Training Split: 75%
-├── Test Split: 25%
-└── Image Size: Auto-scaled (32x32 → 380x380)
+├── Training Split: 60%
+├── Test Split: 50%
+└── Image Size: 640x640 (YOLO), Auto-scaled (others)
 
 HOG+SVM: ~89% [Lightning fast]
 MobileNetV2: ~95% [Balanced]
 EfficientNetV2S: ~97% [SOTA production]
+YOLOv8n: ~98% mAP [Real-time detection]
 ```
 
 ## ⚙️ Model Files Generated
@@ -98,7 +119,8 @@ EfficientNetV2S: ~97% [SOTA production]
 models/
 ├── helmet_hog_svm.pkl # HOG + SVM (1 MB)
 ├── helmet_mobilenetv2.h5 # MobileNetV2 (3 MB)
-└── helmet_efficientnetv2s.h5 # EfficientNetV2S (15 MB)
+├── helmet_efficientnetv2s.h5 # EfficientNetV2S (15 MB)
+└── helmet_yolov8n.pt # YOLOv8n (6 MB) 
 ```
 
 ## 🖥️ Hardware Requirements
@@ -108,8 +130,10 @@ models/
 | HOG + SVM       | 1 core    | 2 GB | < 1 min       |
 | MobileNetV2     | 4 cores   | 4 GB | 5–10 min      |
 | EfficientNetV2S | 4–8 cores | 8 GB | 15–30 min     |
+| YOLOv8n         | 4–8 cores | 8 GB | 20–45 min     |
 
-All models run inference in < 0.1 s/image on CPU.
+**All models:** Inference < 0.1s/image on CPU. **YOLOv8n: 30+ FPS on GPU.**
+
 
 ## 🎓 Learning Path
 ```
@@ -121,6 +145,9 @@ All models run inference in < 0.1 s/image on CPU.
 
 3.    EfficientNetV2S → SOTA deep learning
       └── Fine-tuning, advanced callbacks, optimization
+
+4.    YOLOv8n → Production object detection
+      └── Bounding boxes, real-time inference, deployment
 ```
 
 ## 🔗 Class Mapping
@@ -136,6 +163,8 @@ All models run inference in < 0.1 s/image on CPU.
 - [HOG + SVM ](https://www.digitalocean.com/community/tutorials/image-classification-without-neural-networks) image classification without deep learning.
 - [MobileNetV2](https://slogix.in/source-code/python/deep-learning-samples/how-to-build-an-image-classification-model-with-mobilenetv2-for-cat-and-dog-images/) transfer learning examples.
 - [EfficientNetV2](https://labelyourdata.com/articles/image-classification-models) and other modern image classification models.
+- [YOLOv8 Documentation](https://docs.ultralytics.com/)
+- [Ultralytics HUB](https://hub.ultralytics.com/) for no-code training
 
 ## 🙌 Contributing
 
