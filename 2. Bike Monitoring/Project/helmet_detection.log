@@ -1,0 +1,68 @@
+2025-12-21 18:01:04,861 - __main__ - INFO - ================================================================================
+2025-12-21 18:01:04,861 - __main__ - INFO - HELMET DETECTION & NUMBER PLATE OCR SYSTEM
+2025-12-21 18:01:04,861 - __main__ - INFO - ================================================================================
+2025-12-21 18:01:04,861 - __main__ - INFO - Initializing Helmet Detection Pipeline...
+2025-12-21 18:01:04,950 - azure_ocr_processor - INFO - Azure Computer Vision client initialized
+2025-12-21 18:01:04,953 - database_manager - INFO - Connected to database: detection_results.db
+2025-12-21 18:01:04,960 - database_manager - INFO - Database tables created successfully
+2025-12-21 18:01:04,960 - __main__ - INFO - Pipeline initialized successfully!
+2025-12-21 18:01:04,960 - __main__ - INFO - Processing image: test4.png
+2025-12-21 18:01:05,012 - __main__ - INFO - Step 1: Detecting helmet status...
+2025-12-21 18:01:05,181 - __main__ - INFO - Person detected - Helmet: False, Confidence: 0.9104
+2025-12-21 18:01:05,181 - __main__ - INFO - Step 2: Detecting number plates...
+2025-12-21 18:01:05,310 - __main__ - INFO - Step 3: Processing OCR for number plates...
+2025-12-21 18:01:05,379 - __main__ - INFO - Step 4: Storing results in database...
+2025-12-21 18:01:05,387 - database_manager - INFO - Violation recorded: NO_HELMET - Plate: None
+2025-12-21 18:01:05,391 - database_manager - INFO - Detection results stored with ID: 2
+2025-12-21 18:01:05,391 - __main__ - INFO - Processing result: {'timestamp': '2025-12-21T18:01:05.378993', 'image_path': 'test4.png', 'helmet_detection': {'total_persons': 1, 'with_helmet': 0, 'without_helmet': 1, 'detections': [{'has_helmet': False, 'confidence': 0.9104, 'bbox': (1202, 106, 1438, 385), 'status': 'VIOLATION'}]}, 'number_plate_detection': {'total_plates': 0, 'plates': []}, 'ocr_results': {'processed_plates': 0, 'extraction_results': []}, 'status': 'success'}
+2025-12-21 18:01:05,391 - __main__ - INFO - Creating visualization for: test4.png
+2025-12-21 18:01:05,673 - __main__ - INFO - Visualization saved to: visualization_output.jpg
+2025-12-21 18:08:54,253 - __main__ - INFO - ================================================================================
+2025-12-21 18:08:54,253 - __main__ - INFO - HELMET DETECTION & NUMBER PLATE OCR SYSTEM
+2025-12-21 18:08:54,254 - __main__ - INFO - ================================================================================
+2025-12-21 18:08:54,254 - __main__ - INFO - Initializing Helmet Detection Pipeline...
+2025-12-21 18:08:54,337 - azure_ocr_processor - INFO - Azure Computer Vision client initialized
+2025-12-21 18:08:54,339 - database_manager - INFO - Connected to database: detection_results.db
+2025-12-21 18:08:54,341 - database_manager - INFO - Database tables created successfully
+2025-12-21 18:08:54,341 - __main__ - INFO - Pipeline initialized successfully!
+2025-12-21 18:08:54,342 - __main__ - INFO - Processing image: test4.png
+2025-12-21 18:08:54,391 - __main__ - INFO - Step 1: Detecting helmet status...
+2025-12-21 18:08:54,574 - __main__ - INFO - Person detected - Helmet: False, Confidence: 0.9104
+2025-12-21 18:08:54,574 - __main__ - INFO - Step 2: Detecting number plates...
+2025-12-21 18:08:54,688 - __main__ - INFO - Number plate 1 detected - Confidence: 0.3118
+2025-12-21 18:08:54,688 - __main__ - INFO - Step 3: Processing OCR for number plates...
+2025-12-21 18:08:54,775 - azure_ocr_processor - INFO - Sending image array to Azure OCR
+2025-12-21 18:08:55,081 - azure_ocr_processor - ERROR - Error processing image array: 'bytes' object has no attribute 'read'
+2025-12-21 18:08:55,081 - __main__ - WARNING - OCR failed for plate 1
+2025-12-21 18:08:55,082 - __main__ - INFO - Step 4: Storing results in database...
+2025-12-21 18:08:55,084 - database_manager - INFO - Violation recorded: NO_HELMET - Plate: None
+2025-12-21 18:08:55,088 - database_manager - INFO - Detection results stored with ID: 3
+2025-12-21 18:08:55,088 - __main__ - INFO - Processing result: {'timestamp': '2025-12-21T18:08:55.082620', 'image_path': 'test4.png', 'helmet_detection': {'total_persons': 1, 'with_helmet': 0, 'without_helmet': 1, 'detections': [{'has_helmet': False, 'confidence': 0.9104, 'bbox': (1202, 106, 1438, 385), 'status': 'VIOLATION'}]}, 'number_plate_detection': {'total_plates': 1, 'plates': [{'plate_id': 1, 'bbox': (1228, 771, 1431, 871), 'confidence': 0.3118, 'plate_area': (100, 203, 3), 'status': 'detected'}]}, 'ocr_results': {'processed_plates': 0, 'extraction_results': []}, 'status': 'success'}
+2025-12-21 18:08:55,088 - __main__ - INFO - Creating visualization for: test4.png
+2025-12-21 18:08:55,390 - __main__ - INFO - Visualization saved to: visualization_output.jpg
+2025-12-21 18:12:25,850 - __main__ - INFO - ================================================================================
+2025-12-21 18:12:25,850 - __main__ - INFO - HELMET DETECTION & NUMBER PLATE OCR SYSTEM
+2025-12-21 18:12:25,850 - __main__ - INFO - ================================================================================
+2025-12-21 18:12:25,850 - __main__ - INFO - Initializing Helmet Detection Pipeline...
+2025-12-21 18:12:25,981 - azure_ocr_processor - INFO - Azure Computer Vision client initialized
+2025-12-21 18:12:25,992 - database_manager - INFO - Connected to database: detection_results.db
+2025-12-21 18:12:26,001 - database_manager - INFO - Database tables created successfully
+2025-12-21 18:12:26,001 - __main__ - INFO - Pipeline initialized successfully!
+2025-12-21 18:12:26,003 - __main__ - INFO - Processing image: test4.png
+2025-12-21 18:12:26,052 - __main__ - INFO - Step 1: Detecting helmet status...
+2025-12-21 18:12:26,407 - __main__ - INFO - Person detected - Helmet: False, Confidence: 0.9104
+2025-12-21 18:12:26,407 - __main__ - INFO - Step 2: Detecting number plates...
+2025-12-21 18:12:26,552 - __main__ - INFO - Number plate 1 detected - Confidence: 0.3118
+2025-12-21 18:12:26,552 - __main__ - INFO - Step 3: Processing OCR for number plates...
+2025-12-21 18:12:26,640 - azure_ocr_processor - INFO - Extracting text from image array...
+2025-12-21 18:12:26,648 - azure_ocr_processor - INFO - Sending image array to Azure OCR...
+2025-12-21 18:12:27,062 - azure_ocr_processor - INFO - OCR operation started: cb5acdcc-15d2-4532-984e-5bd1c74df325
+2025-12-21 18:12:27,168 - azure_ocr_processor - INFO - Polling attempt 1/30. Status: OperationStatusCodes.running
+2025-12-21 18:12:28,276 - azure_ocr_processor - INFO - Text extracted successfully: BKS 580...
+2025-12-21 18:12:28,277 - __main__ - INFO - OCR Result - Plate 1: BKS 580
+2025-12-21 18:12:28,277 - __main__ - INFO - Step 4: Storing results in database...
+2025-12-21 18:12:28,281 - database_manager - INFO - Violation recorded: NO_HELMET - Plate: BKS 580
+2025-12-21 18:12:28,286 - database_manager - INFO - Detection results stored with ID: 4
+2025-12-21 18:12:28,287 - __main__ - INFO - Processing result: {'timestamp': '2025-12-21T18:12:28.277203', 'image_path': 'test4.png', 'helmet_detection': {'total_persons': 1, 'with_helmet': 0, 'without_helmet': 1, 'detections': [{'has_helmet': False, 'confidence': 0.9104, 'bbox': (1202, 106, 1438, 385), 'status': 'VIOLATION'}]}, 'number_plate_detection': {'total_plates': 1, 'plates': [{'plate_id': 1, 'bbox': (1228, 771, 1431, 871), 'confidence': 0.3118, 'plate_area': (100, 203, 3), 'status': 'detected'}]}, 'ocr_results': {'processed_plates': 1, 'extraction_results': [{'plate_id': 1, 'extracted_text': 'BKS 580', 'confidence': 'high', 'valid_format': False}]}, 'status': 'success'}
+2025-12-21 18:12:28,287 - __main__ - INFO - Creating visualization for: test4.png
+2025-12-21 18:12:28,557 - __main__ - INFO - Visualization saved to: visualization_output.jpg
