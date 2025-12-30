@@ -4,7 +4,7 @@ from ultralytics import YOLO
 import av
 
 # Load YOLO model
-model = YOLO("1. Helmet Detection/Models/best.pt")
+model = YOLO("1-Helmet-Detection/Models/best.pt")
 model.model.names = {0: "Helmet", 1: "No Helmet", 2: "No Person"}
 
 st.set_page_config(page_title="Helmet Detection", layout="centered")
