@@ -1,5 +1,5 @@
 import streamlit as st
-from streamlit_webrtc import webrtc_streamer, VideoTransformerBase
+from streamlit_webrtc import webrtc_streamer, VideoProcessorBase
 from ultralytics import YOLO
 import av
 import cv2
@@ -11,7 +11,7 @@ model.model.names = {0: "Helmet", 1: "No Helmet", 2: "No Person"}
 st.set_page_config(page_title="Helmet Detection", layout="centered")
 st.title("Real-time Helmet Detection")
 
-class HelmetDetector(VideoTransformerBase):
+class HelmetDetector(VideoProcessorBase):
     def __init__(self):
         self.model = model
 
@@ -38,6 +38,6 @@ class HelmetDetector(VideoTransformerBase):
 
 webrtc_streamer(
     key="helmet-detection",
-    video_transformer_factory=HelmetDetector,
+    video_processor_factory=HelmetDetector,
     media_stream_constraints={"video": True, "audio": False},
 )
