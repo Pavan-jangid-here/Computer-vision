@@ -2,4 +2,5 @@ streamlit-webrtc
 ultralytics
 streamlit
 av
-opencv-python-headless
+ultralytics-opencv-headless
+torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cpu  # CPU-only for cloud

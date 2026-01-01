@@ -2,6 +2,7 @@ import streamlit as st
 from streamlit_webrtc import webrtc_streamer, VideoTransformerBase
 from ultralytics import YOLO
 import av
+import cv2
 
 # Load YOLO model
 model = YOLO("1-Helmet-Detection/Models/best.pt")
@@ -23,7 +24,6 @@ class HelmetDetector(VideoTransformerBase):
         annotated = r.plot()
 
         # Optionally, overlay count text
-        import cv2
         cv2.putText(
             annotated,
             f"Detections: {len(r.boxes)}",
