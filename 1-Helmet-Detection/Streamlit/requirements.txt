@@ -1,6 +1,6 @@
 ultralytics-opencv-headless
-streamlit-webrtc==0.45.0
+streamlit-webrtc
 av
 torch
 numpy
-streamlit==1.26.0
+streamlit
