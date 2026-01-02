@@ -1,6 +1,8 @@
 ultralytics-opencv-headless
 streamlit-webrtc==0.45.0
 av
-torch
+torch --index-url https://download.pytorch.org/whl/cpu
+torchvision --index-url https://download.pytorch.org/whl/cpu
+torchaudio --index-url https://download.pytorch.org/whl/cpu
 numpy
 streamlit==1.26.0
